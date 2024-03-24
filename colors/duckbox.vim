@@ -1,7 +1,7 @@
 " -----------------------------------------------------------------------------
-" File: gruvbox.vim
-" Description: Retro groove color scheme for Vim
-" Author: morhetz <morhetz@gmail.com>
+" File: duckbox.vim
+" Description: Retro groove color scheme for Vim modified to my liking
+" Author: andreastveitdalg <andreas.tveitdalg@gmail.com>
 " Source: https://github.com/morhetz/gruvbox
 " Last Modified: 12 Aug 2017
 " -----------------------------------------------------------------------------
@@ -371,7 +371,8 @@ endif
 " }}}
 " Highlighting Function: {{{
 
-function! s:HL(group, fg, ...)
+"function! s:HL(group, fg, ...)
+function! s:HL(group, fg)
   " Arguments: group, guifg, guibg, gui, guisp
 
   " foreground
@@ -434,27 +435,48 @@ call s:HL('GruvboxBg3', s:bg3)
 call s:HL('GruvboxBg4', s:bg4)
 
 call s:HL('GruvboxRed', s:red)
-call s:HL('GruvboxRedBold', s:red, s:none, s:bold)
+""call s:HL('GruvboxRedBold', s:red, s:none, s:bold)
+"call s:HL('GruvboxRedBold', s:red)
+call s:HL('GruvboxRedBold', s:red)
 call s:HL('GruvboxGreen', s:green)
-call s:HL('GruvboxGreenBold', s:green, s:none, s:bold)
+""call s:HL('GruvboxGreenBold', s:green, s:none, s:bold)
+"call s:HL('GruvboxGreenBold', s:green)
+call s:HL('GruvboxGreenBold', s:green)
 call s:HL('GruvboxYellow', s:yellow)
-call s:HL('GruvboxYellowBold', s:yellow, s:none, s:bold)
+""call s:HL('GruvboxYellowBold', s:yellow, s:none, s:bold)
+"call s:HL('GruvboxYellowBold', s:yellow)
+call s:HL('GruvboxYellowBold', s:yellow)
 call s:HL('GruvboxBlue', s:blue)
-call s:HL('GruvboxBlueBold', s:blue, s:none, s:bold)
+""call s:HL('GruvboxBlueBold', s:blue, s:none, s:bold)
+"call s:HL('GruvboxBlueBold', s:blue)
+call s:HL('GruvboxBlueBold', s:blue)
 call s:HL('GruvboxPurple', s:purple)
-call s:HL('GruvboxPurpleBold', s:purple, s:none, s:bold)
+""call s:HL('GruvboxPurpleBold', s:purple, s:none, s:bold)
+"call s:HL('GruvboxPurpleBold', s:purple)
+call s:HL('GruvboxPurpleBold', s:purple)
 call s:HL('GruvboxAqua', s:aqua)
-call s:HL('GruvboxAquaBold', s:aqua, s:none, s:bold)
+""call s:HL('GruvboxAquaBold', s:aqua, s:none, s:bold)
+"call s:HL('GruvboxAquaBold', s:aqua)
+call s:HL('GruvboxAquaBold', s:aqua)
 call s:HL('GruvboxOrange', s:orange)
-call s:HL('GruvboxOrangeBold', s:orange, s:none, s:bold)
+""call s:HL('GruvboxOrangeBold', s:orange, s:none, s:bold)
+"call s:HL('GruvboxOrangeBold', s:orange)
+call s:HL('GruvboxOrangeBold', s:orange)
 
-call s:HL('GruvboxRedSign', s:red, s:sign_column, s:invert_signs)
-call s:HL('GruvboxGreenSign', s:green, s:sign_column, s:invert_signs)
-call s:HL('GruvboxYellowSign', s:yellow, s:sign_column, s:invert_signs)
-call s:HL('GruvboxBlueSign', s:blue, s:sign_column, s:invert_signs)
-call s:HL('GruvboxPurpleSign', s:purple, s:sign_column, s:invert_signs)
-call s:HL('GruvboxAquaSign', s:aqua, s:sign_column, s:invert_signs)
-call s:HL('GruvboxOrangeSign', s:orange, s:sign_column, s:invert_signs)
+"call s:HL('GruvboxRedSign', s:red, s:sign_column, s:invert_signs)
+call s:HL('GruvboxRedSign', s:red)
+"call s:HL('GruvboxGreenSign', s:green, s:sign_column, s:invert_signs)
+call s:HL('GruvboxGreenSign', s:green)
+"call s:HL('GruvboxYellowSign', s:yellow, s:sign_column, s:invert_signs)
+call s:HL('GruvboxYellowSign', s:yellow)
+"call s:HL('GruvboxBlueSign', s:blue, s:sign_column, s:invert_signs)
+call s:HL('GruvboxBlueSign', s:blue)
+"call s:HL('GruvboxPurpleSign', s:purple, s:sign_column, s:invert_signs)
+call s:HL('GruvboxPurpleSign', s:purple)
+"call s:HL('GruvboxAquaSign', s:aqua, s:sign_column, s:invert_signs)
+call s:HL('GruvboxAquaSign', s:aqua)
+"call s:HL('GruvboxOrangeSign', s:orange, s:sign_column, s:invert_signs)
+call s:HL('GruvboxOrangeSign', s:orange)
 
 " }}}
 
@@ -462,7 +484,8 @@ call s:HL('GruvboxOrangeSign', s:orange, s:sign_column, s:invert_signs)
 " General UI: {{{
 
 " Normal text
-call s:HL('Normal', s:fg1, s:bg0)
+"call s:HL('Normal', s:fg1, s:bg0)
+call s:HL('Normal', s:fg1)
 
 " Correct background (see issue #7):
 " --- Problem with changing between dark and light on 256 color terminal
@@ -475,51 +498,66 @@ endif
 
 if version >= 700
   " Screen line that the cursor is
-  call s:HL('CursorLine',   s:none, s:bg1)
+  "call s:HL('CursorLine',   s:none, s:bg1)
+  call s:HL('CursorLine',   s:none)
   " Screen column that the cursor is
   hi! link CursorColumn CursorLine
 
   " Tab pages line filler
-  call s:HL('TabLineFill', s:bg4, s:bg1, s:invert_tabline)
+  "call s:HL('TabLineFill', s:bg4, s:bg1, s:invert_tabline)
+  call s:HL('TabLineFill', s:bg4)
   " Active tab page label
-  call s:HL('TabLineSel', s:green, s:bg1, s:invert_tabline)
+  "call s:HL('TabLineSel', s:green, s:bg1, s:invert_tabline)
+  call s:HL('TabLineSel', s:green)
   " Not active tab page label
   hi! link TabLine TabLineFill
 
   " Match paired bracket under the cursor
-  call s:HL('MatchParen', s:none, s:bg3, s:bold)
+  "call s:HL('MatchParen', s:none, s:bg3, s:bold)
+  call s:HL('MatchParen', s:none)
 endif
 
 if version >= 703
   " Highlighted screen columns
-  call s:HL('ColorColumn',  s:none, s:color_column)
+  "call s:HL('ColorColumn',  s:none, s:color_column)
+  call s:HL('ColorColumn',  s:none)
 
   " Concealed element: \lambda → λ
-  call s:HL('Conceal', s:blue, s:none)
+  "call s:HL('Conceal', s:blue, s:none)
+  call s:HL('Conceal', s:blue)
 
   " Line number of CursorLine
-  call s:HL('CursorLineNr', s:yellow, s:bg1)
+  "call s:HL('CursorLineNr', s:yellow, s:bg1)
+  call s:HL('CursorLineNr', s:yellow)
 endif
 
 hi! link NonText GruvboxBg2
 hi! link SpecialKey GruvboxBg2
 
-call s:HL('Visual',    s:none,  s:bg3, s:invert_selection)
+"call s:HL('Visual',    s:none,  s:bg3, s:invert_selection)
+call s:HL('Visual',    s:none)
 hi! link VisualNOS Visual
 
-call s:HL('Search',    s:yellow, s:bg0, s:inverse)
-call s:HL('IncSearch', s:hls_cursor, s:bg0, s:inverse)
+"call s:HL('Search',    s:yellow, s:bg0, s:inverse)
+call s:HL('Search',    s:yellow)
+"call s:HL('IncSearch', s:hls_cursor, s:bg0, s:inverse)
+call s:HL('IncSearch', s:hls_cursor)
 
-call s:HL('Underlined', s:blue, s:none, s:underline)
+"call s:HL('Underlined', s:blue, s:none, s:underline)
+call s:HL('Underlined', s:blue)
 
-call s:HL('StatusLine',   s:bg2, s:fg1, s:inverse)
-call s:HL('StatusLineNC', s:bg1, s:fg4, s:inverse)
+"call s:HL('StatusLine',   s:bg2, s:fg1, s:inverse)
+call s:HL('StatusLine',   s:bg2)
+"call s:HL('StatusLineNC', s:bg1, s:fg4, s:inverse)
+call s:HL('StatusLineNC', s:bg1)
 
 " The column separating vertically split windows
-call s:HL('VertSplit', s:bg3, s:vert_split)
+"call s:HL('VertSplit', s:bg3, s:vert_split)
+call s:HL('VertSplit', s:bg3)
 
 " Current match in wildmenu completion
-call s:HL('WildMenu', s:blue, s:bg2, s:bold)
+"call s:HL('WildMenu', s:blue, s:bg2, s:bold)
+call s:HL('WildMenu', s:blue)
 
 " Directory names, special names in listing
 hi! link Directory GruvboxGreenBold
@@ -528,7 +566,8 @@ hi! link Directory GruvboxGreenBold
 hi! link Title GruvboxGreenBold
 
 " Error messages on the command line
-call s:HL('ErrorMsg',   s:bg0, s:red, s:bold)
+"call s:HL('ErrorMsg',   s:bg0, s:red, s:bold)
+call s:HL('ErrorMsg',   s:bg0)
 " More prompt: -- More --
 hi! link MoreMsg GruvboxYellowBold
 " Current mode message: -- INSERT --
@@ -542,21 +581,26 @@ hi! link WarningMsg GruvboxRedBold
 " Gutter: {{{
 
 " Line number for :number and :# commands
-call s:HL('LineNr', s:bg4, s:number_column)
+"call s:HL('LineNr', s:bg4, s:number_column)
+call s:HL('LineNr', s:bg4)
 
 " Column where signs are displayed
-call s:HL('SignColumn', s:none, s:sign_column)
+"call s:HL('SignColumn', s:none, s:sign_column)
+call s:HL('SignColumn', s:none)
 
 " Line used for closed folds
-call s:HL('Folded', s:gray, s:bg1, s:italic)
+"call s:HL('Folded', s:gray, s:bg1, s:italic)
+call s:HL('Folded', s:gray)
 " Column where folds are displayed
-call s:HL('FoldColumn', s:gray, s:bg1)
+"call s:HL('FoldColumn', s:gray, s:bg1)
+call s:HL('FoldColumn', s:gray)
 
 " }}}
 " Cursor: {{{
 
 " Character under cursor
-call s:HL('Cursor', s:none, s:none, s:inverse)
+"call s:HL('Cursor', s:none, s:none, s:inverse)
+call s:HL('Cursor', s:none)
 " Visual mode cursor, selection
 hi! link vCursor Cursor
 " Input moder cursor
@@ -570,12 +614,16 @@ hi! link lCursor Cursor
 if g:gruvbox_improved_strings == 0
   hi! link Special GruvboxOrange
 else
-  call s:HL('Special', s:orange, s:bg1, s:italicize_strings)
+  "call s:HL('Special', s:orange, s:bg1, s:italicize_strings)
+  call s:HL('Special', s:orange)
 endif
 
-call s:HL('Comment', s:gray, s:none, s:italicize_comments)
-call s:HL('Todo', s:vim_fg, s:vim_bg, s:bold . s:italic)
-call s:HL('Error', s:red, s:vim_bg, s:bold . s:inverse)
+"call s:HL('Comment', s:gray, s:none, s:italicize_comments)
+call s:HL('Comment', s:gray)
+"call s:HL('Todo', s:vim_fg, s:vim_bg, s:bold . s:italic)
+call s:HL('Todo', s:vim_fg)
+"call s:HL('Error', s:red, s:vim_bg, s:bold . s:inverse)
+call s:HL('Error', s:red)
 
 " Generic statement
 hi! link Statement GruvboxRed
@@ -614,9 +662,11 @@ hi! link Constant GruvboxPurple
 hi! link Character GruvboxPurple
 " String constant: "this is a string"
 if g:gruvbox_improved_strings == 0
-  call s:HL('String',  s:green, s:none, s:italicize_strings)
+  "call s:HL('String',  s:green, s:none, s:italicize_strings)
+  call s:HL('String',  s:green)
 else
-  call s:HL('String',  s:fg1, s:bg1, s:italicize_strings)
+  "call s:HL('String',  s:fg1, s:bg1, s:italicize_strings)
+  call s:HL('String',  s:fg1)
 endif
 " Boolean constant: TRUE, false
 hi! link Boolean GruvboxPurple
@@ -639,26 +689,35 @@ hi! link Typedef GruvboxYellow
 
 if version >= 700
   " Popup menu: normal item
-  call s:HL('Pmenu', s:fg1, s:bg2)
+  "call s:HL('Pmenu', s:fg1, s:bg2)
+  call s:HL('Pmenu', s:fg1)
   " Popup menu: selected item
-  call s:HL('PmenuSel', s:bg2, s:blue, s:bold)
+  "call s:HL('PmenuSel', s:bg2, s:blue, s:bold)
+  call s:HL('PmenuSel', s:bg2)
   " Popup menu: scrollbar
-  call s:HL('PmenuSbar', s:none, s:bg2)
+  "call s:HL('PmenuSbar', s:none, s:bg2)
+  call s:HL('PmenuSbar', s:none)
   " Popup menu: scrollbar thumb
-  call s:HL('PmenuThumb', s:none, s:bg4)
+  "call s:HL('PmenuThumb', s:none, s:bg4)
+  call s:HL('PmenuThumb', s:none)
 endif
 
 " }}}
 " Diffs: {{{
 
-call s:HL('DiffDelete', s:red, s:bg0, s:inverse)
-call s:HL('DiffAdd',    s:green, s:bg0, s:inverse)
-"call s:HL('DiffChange', s:bg0, s:blue)
+"call s:HL('DiffDelete', s:red, s:bg0, s:inverse)
+call s:HL('DiffDelete', s:red)
+"call s:HL('DiffAdd',    s:green, s:bg0, s:inverse)
+call s:HL('DiffAdd',    s:green)
+""call s:HL('DiffChange', s:bg0, s:blue)
+"call s:HL('DiffChange', s:bg0)
 "call s:HL('DiffText',   s:bg0, s:yellow)
 
 " Alternative setting
-call s:HL('DiffChange', s:aqua, s:bg0, s:inverse)
-call s:HL('DiffText',   s:yellow, s:bg0, s:inverse)
+"call s:HL('DiffChange', s:aqua, s:bg0, s:inverse)
+call s:HL('DiffChange', s:aqua)
+"call s:HL('DiffText',   s:yellow, s:bg0, s:inverse)
+call s:HL('DiffText',   s:yellow)
 
 " }}}
 " Spelling: {{{
@@ -666,16 +725,21 @@ call s:HL('DiffText',   s:yellow, s:bg0, s:inverse)
 if has("spell")
   " Not capitalised word, or compile warnings
   if g:gruvbox_improved_warnings == 0
-    call s:HL('SpellCap',   s:none, s:none, s:undercurl, s:red)
+    "call s:HL('SpellCap',   s:none, s:none, s:undercurl, s:red)
+    call s:HL('SpellCap',   s:none)
   else
-    call s:HL('SpellCap',   s:green, s:none, s:bold . s:italic)
+    "call s:HL('SpellCap',   s:green, s:none, s:bold . s:italic)
+    call s:HL('SpellCap',   s:green)
   endif
   " Not recognized word
-  call s:HL('SpellBad',   s:none, s:none, s:undercurl, s:blue)
+  "call s:HL('SpellBad',   s:none, s:none, s:undercurl, s:blue)
+  call s:HL('SpellBad',   s:none)
   " Wrong spelling for selected region
-  call s:HL('SpellLocal', s:none, s:none, s:undercurl, s:aqua)
+  "call s:HL('SpellLocal', s:none, s:none, s:undercurl, s:aqua)
+  call s:HL('SpellLocal', s:none)
   " Rare word
-  call s:HL('SpellRare',  s:none, s:none, s:undercurl, s:purple)
+  "call s:HL('SpellRare',  s:none, s:none, s:undercurl, s:purple)
+  call s:HL('SpellRare',  s:none)
 endif
 
 " }}}
@@ -701,11 +765,11 @@ endif
 
 if g:indent_guides_auto_colors == 0
   if g:gruvbox_invert_indent_guides == 0
-    call s:HL('IndentGuidesOdd', s:vim_bg, s:bg2)
-    call s:HL('IndentGuidesEven', s:vim_bg, s:bg1)
+    "call s:HL('IndentGuidesOdd', s:vim_bg, s:bg2)
+    "call s:HL('IndentGuidesEven', s:vim_bg, s:bg1)
   else
-    call s:HL('IndentGuidesOdd', s:vim_bg, s:bg2, s:inverse)
-    call s:HL('IndentGuidesEven', s:vim_bg, s:bg3, s:inverse)
+    "call s:HL('IndentGuidesOdd', s:vim_bg, s:bg2, s:inverse)
+    "call s:HL('IndentGuidesEven', s:vim_bg, s:bg3, s:inverse)
   endif
 endif
 
@@ -770,8 +834,10 @@ hi! link SignifySignDelete GruvboxRedSign
 " }}}
 " Syntastic: {{{
 
-call s:HL('SyntasticError', s:none, s:none, s:undercurl, s:red)
-call s:HL('SyntasticWarning', s:none, s:none, s:undercurl, s:yellow)
+"call s:HL('SyntasticError', s:none, s:none, s:undercurl, s:red)
+call s:HL('SyntasticError', s:none)
+"call s:HL('SyntasticWarning', s:none, s:none, s:undercurl, s:yellow)
+call s:HL('SyntasticWarning', s:none)
 
 hi! link SyntasticErrorSign GruvboxRedSign
 hi! link SyntasticWarningSign GruvboxYellowSign
@@ -798,9 +864,12 @@ hi! link CtrlPPrtBase GruvboxBg2
 hi! link CtrlPPrtCursor GruvboxBlue
 hi! link CtrlPLinePre GruvboxBg2
 
-call s:HL('CtrlPMode1', s:blue, s:bg2, s:bold)
-call s:HL('CtrlPMode2', s:bg0, s:blue, s:bold)
-call s:HL('CtrlPStats', s:fg4, s:bg2, s:bold)
+"call s:HL('CtrlPMode1', s:blue, s:bg2, s:bold)
+call s:HL('CtrlPMode1', s:blue)
+"call s:HL('CtrlPMode2', s:bg0, s:blue, s:bold)
+call s:HL('CtrlPMode2', s:bg0)
+"call s:HL('CtrlPStats', s:fg4, s:bg2, s:bold)
+call s:HL('CtrlPStats', s:fg4)
 
 " }}}
 " Startify: {{{
@@ -828,17 +897,24 @@ let g:vimshell_escape_colors = [
 " }}}
 " BufTabLine: {{{
 
-call s:HL('BufTabLineCurrent', s:bg0, s:fg4)
-call s:HL('BufTabLineActive', s:fg4, s:bg2)
-call s:HL('BufTabLineHidden', s:bg4, s:bg1)
-call s:HL('BufTabLineFill', s:bg0, s:bg0)
+"call s:HL('BufTabLineCurrent', s:bg0, s:fg4)
+call s:HL('BufTabLineCurrent', s:bg0)
+"call s:HL('BufTabLineActive', s:fg4, s:bg2)
+call s:HL('BufTabLineActive', s:fg4)
+"call s:HL('BufTabLineHidden', s:bg4, s:bg1)
+call s:HL('BufTabLineHidden', s:bg4)
+"call s:HL('BufTabLineFill', s:bg0, s:bg0)
+call s:HL('BufTabLineFill', s:bg0)
 
 " }}}
 " Asynchronous Lint Engine: {{{
 
-call s:HL('ALEError', s:none, s:none, s:undercurl, s:red)
-call s:HL('ALEWarning', s:none, s:none, s:undercurl, s:yellow)
-call s:HL('ALEInfo', s:none, s:none, s:undercurl, s:blue)
+"call s:HL('ALEError', s:none, s:none, s:undercurl, s:red)
+call s:HL('ALEError', s:none)
+"call s:HL('ALEWarning', s:none, s:none, s:undercurl, s:yellow)
+call s:HL('ALEWarning', s:none)
+"call s:HL('ALEInfo', s:none, s:none, s:undercurl, s:blue)
+call s:HL('ALEInfo', s:none)
 
 hi! link ALEErrorSign GruvboxRedSign
 hi! link ALEWarningSign GruvboxYellowSign
@@ -886,8 +962,10 @@ hi! link NERDTreeToggleOff GruvboxRed
 " }}}
 " Vim Multiple Cursors: {{{
 
-call s:HL('multiple_cursors_cursor', s:none, s:none, s:inverse)
-call s:HL('multiple_cursors_visual', s:none, s:bg2)
+"call s:HL('multiple_cursors_cursor', s:none, s:none, s:inverse)
+call s:HL('multiple_cursors_cursor', s:none)
+"call s:HL('multiple_cursors_visual', s:none, s:bg2)
+call s:HL('multiple_cursors_visual', s:none)
 
 " }}}
 " coc.nvim: {{{
@@ -908,10 +986,14 @@ hi! link CocDiagnosticsHint GruvboxBlue
 hi! link CocSelectedText GruvboxRed
 hi! link CocCodeLens GruvboxGray
 
-call s:HL('CocErrorHighlight', s:none, s:none, s:undercurl, s:red)
-call s:HL('CocWarningHighlight', s:none, s:none, s:undercurl, s:orange)
-call s:HL('CocInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
-call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
+"call s:HL('CocErrorHighlight', s:none, s:none, s:undercurl, s:red)
+call s:HL('CocErrorHighlight', s:none)
+"call s:HL('CocWarningHighlight', s:none, s:none, s:undercurl, s:orange)
+call s:HL('CocWarningHighlight', s:none)
+"call s:HL('CocInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
+call s:HL('CocInfoHighlight', s:none)
+"call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
+call s:HL('CocHintHighlight', s:none)
 
 " }}}
 
@@ -940,18 +1022,26 @@ hi! link htmlScriptTag GruvboxPurple
 hi! link htmlTagN GruvboxFg1
 hi! link htmlSpecialTagName GruvboxAquaBold
 
-call s:HL('htmlLink', s:fg4, s:none, s:underline)
+"call s:HL('htmlLink', s:fg4, s:none, s:underline)
+call s:HL('htmlLink', s:fg4)
 
 hi! link htmlSpecialChar GruvboxOrange
 
-call s:HL('htmlBold', s:vim_fg, s:vim_bg, s:bold)
-call s:HL('htmlBoldUnderline', s:vim_fg, s:vim_bg, s:bold . s:underline)
-call s:HL('htmlBoldItalic', s:vim_fg, s:vim_bg, s:bold . s:italic)
-call s:HL('htmlBoldUnderlineItalic', s:vim_fg, s:vim_bg, s:bold . s:underline . s:italic)
+"call s:HL('htmlBold', s:vim_fg, s:vim_bg, s:bold)
+call s:HL('htmlBold', s:vim_fg)
+"call s:HL('htmlBoldUnderline', s:vim_fg, s:vim_bg, s:bold . s:underline)
+call s:HL('htmlBoldUnderline', s:vim_fg)
+"call s:HL('htmlBoldItalic', s:vim_fg, s:vim_bg, s:bold . s:italic)
+call s:HL('htmlBoldItalic', s:vim_fg)
+"call s:HL('htmlBoldUnderlineItalic', s:vim_fg, s:vim_bg, s:bold . s:underline . s:italic)
+call s:HL('htmlBoldUnderlineItalic', s:vim_fg)
 
-call s:HL('htmlUnderline', s:vim_fg, s:vim_bg, s:underline)
-call s:HL('htmlUnderlineItalic', s:vim_fg, s:vim_bg, s:underline . s:italic)
-call s:HL('htmlItalic', s:vim_fg, s:vim_bg, s:italic)
+"call s:HL('htmlUnderline', s:vim_fg, s:vim_bg, s:underline)
+call s:HL('htmlUnderline', s:vim_fg)
+"call s:HL('htmlUnderlineItalic', s:vim_fg, s:vim_bg, s:underline . s:italic)
+call s:HL('htmlUnderlineItalic', s:vim_fg)
+"call s:HL('htmlItalic', s:vim_fg, s:vim_bg, s:italic)
+call s:HL('htmlItalic', s:vim_fg)
 
 " }}}
 " Xml: {{{
@@ -980,7 +1070,8 @@ hi! link xmlEntityPunct GruvboxOrange
 " }}}
 " Vim: {{{
 
-call s:HL('vimCommentTitle', s:fg4_256, s:none, s:bold . s:italicize_comments)
+"call s:HL('vimCommentTitle', s:fg4_256, s:none, s:bold . s:italicize_comments)
+call s:HL('vimCommentTitle', s:fg4_256)
 
 hi! link vimNotation GruvboxOrange
 hi! link vimBracket GruvboxOrange
@@ -1006,7 +1097,8 @@ hi! link clojureException GruvboxRed
 
 hi! link clojureRegexp GruvboxAqua
 hi! link clojureRegexpEscape GruvboxAqua
-call s:HL('clojureRegexpCharClass', s:fg3, s:none, s:bold)
+"call s:HL('clojureRegexpCharClass', s:fg3, s:none, s:bold)
+call s:HL('clojureRegexpCharClass', s:fg3)
 hi! link clojureRegexpMod clojureRegexpCharClass
 hi! link clojureRegexpQuantifier clojureRegexpCharClass
 
@@ -1327,7 +1419,8 @@ hi! link scalaInterpolation GruvboxAqua
 " }}}
 " Markdown: {{{
 
-call s:HL('markdownItalic', s:fg3, s:none, s:italic)
+"call s:HL('markdownItalic', s:fg3, s:none, s:italic)
+call s:HL('markdownItalic', s:fg3)
 
 hi! link markdownH1 GruvboxGreenBold
 hi! link markdownH2 GruvboxGreenBold
@@ -1354,7 +1447,8 @@ hi! link markdownHeadingDelimiter GruvboxOrange
 hi! link markdownUrl GruvboxPurple
 hi! link markdownUrlTitleDelimiter GruvboxGreen
 
-call s:HL('markdownLinkText', s:gray, s:none, s:underline)
+"call s:HL('markdownLinkText', s:gray, s:none, s:underline)
+call s:HL('markdownLinkText', s:gray)
 hi! link markdownIdDeclaration markdownLinkText
 
 " }}}
@@ -1406,11 +1500,13 @@ hi! link jsonString GruvboxFg1
 " Search Highlighting Cursor {{{
 
 function! GruvboxHlsShowCursor()
-  call s:HL('Cursor', s:bg0, s:hls_cursor)
+  "call s:HL('Cursor', s:bg0, s:hls_cursor)
+  call s:HL('Cursor', s:bg0)
 endfunction
 
 function! GruvboxHlsHideCursor()
-  call s:HL('Cursor', s:none, s:none, s:inverse)
+  "call s:HL('Cursor', s:none, s:none, s:inverse)
+  call s:HL('Cursor', s:none)
 endfunction
 
 " }}}

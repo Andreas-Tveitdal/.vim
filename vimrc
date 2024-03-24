@@ -1,11 +1,8 @@
 
-" Source colorscheme
-source $HOME/.vim/colors/gruvbox.vim
-source $HOME/.vim/autoload/gruvbox.vim
-source $HOME/.vim/autoload/lightline/colorscheme/gruvbox.vim
+" REMEMBER:
+" :edit $VIMRUNTIME/colors/README.txt
+" this is documentation for how to define colorschemes
 
-" Which colorscheme to use. [dark, light]
-set background=dark
 
 " Make space be the leader key - access it with <leader>
 " Having the leader be space is useful since its a lot easier to access on my keyboard layout
@@ -13,7 +10,14 @@ let mapleader = " "
 
 " Any type of remaps
 nnoremap <leader>fv :Ex<CR>
-nnoremap <leader>t :ter<CR>
+nnoremap <leader>th :set nosplitright<CR>:vert ter<CR>
+nnoremap <leader>tj :set splitbelow<CR>:ter<CR>
+nnoremap <leader>tk :set nosplitbelow<CR>:ter<CR>
+nnoremap <leader>tl :set splitright<CR>:vert ter<CR>
+nnoremap <leader>sh :set nosplitright<CR>:vs<CR>
+nnoremap <leader>sj :set splitbelow<CR>:sp<CR>
+nnoremap <leader>sk :set nosplitbelow<CR>:sp<CR>
+nnoremap <leader>sl :set splitright<CR>:vs<CR>
 nnoremap <leader>c $zf%
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -62,6 +66,20 @@ set scrolloff=8
 set signcolumn="yes"
 " set isfname:append("@-@")
 
-syntax enable
+" Relevant options for the colorscheme
+"set termguicolors
+set background=dark
+syntax on
 filetype plugin indent on
+"autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
+"colorscheme gruvbox
+
+" Gruvbox (colorscheme) settings
+"let g:gruvbox_transparent_bg = 1 " default: [0]
+
+" Source colorscheme
+" source $HOME/.vim/colors/duckbox.vim
+"source $HOME/.vim/autoload/gruvbox.vim
+"source $HOME/.vim/autoload/lightline/colorscheme/gruvbox.vim
+colo duckbox
 
